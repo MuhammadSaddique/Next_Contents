@@ -10,8 +10,8 @@ interface HeaderProps {
 export default function Home() {
   return (
     <div>
-      {/* <SecondPage/> */}
       <Header />
+      <SecondPage/>
     </div>
   );
 }

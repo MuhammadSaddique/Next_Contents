@@ -1,7 +1,13 @@
+"use client";
 import React from "react";
 import styles from "./style.module.css";
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Header = () => {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <div
@@ -29,9 +35,15 @@ const Header = () => {
           <div className="flex-grow">
             {/* Middle section */}
             <div className="flex justify-center">
-              <p className="mr-4">Support</p>
-              <p className="mr-4">Privacy Policy</p>
-              <p>Terms and Conditions</p>
+              <Link to="section1" smooth={true} duration={500} className="mr-4">
+                Support
+              </Link>
+              <Link to="section2" smooth={true} duration={500} className="mr-4">
+                Privacy Policy
+              </Link>
+              <Link to="section3" smooth={true} duration={500}>
+                Terms and Conditions
+              </Link>
             </div>
           </div>
           <div>
@@ -40,6 +52,17 @@ const Header = () => {
           </div>
         </div>
       </footer>
+
+      {/* Additional Sections for Demonstration */}
+      <div id="section1" style={{ height: "500px", background: "lightblue" }}>
+        Section 1 Content
+      </div>
+      <div id="section2" style={{ height: "500px", background: "lightgreen" }}>
+        Section 2 Content
+      </div>
+      <div id="section3" style={{ height: "500px", background: "lightcoral" }}>
+        Section 3 Content
+      </div>
     </>
   );
 };
